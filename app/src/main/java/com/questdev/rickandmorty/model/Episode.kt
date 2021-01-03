@@ -1,16 +1,20 @@
 package com.questdev.rickandmorty.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Episode(
     val id: Long,
     val url: String,
-    val name: String, //this
-    val season: Long, //this
-    val number: Long, //this
+    val name: String,
+    val season: Long,
+    val number: Long,
     val type: String,
-    val airdate: String,
-    val airstamp: String,
+    @SerializedName("airdate")
+    val airDate: String,
+    @SerializedName("airstamp")
+    val airStamp: String,
     val runtime: Long,
-    val image: EpisodeImage, //this
+    val image: EpisodeImage,
     val summary: String? = null,
 )
 
